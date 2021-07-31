@@ -57,7 +57,7 @@ public class SDTPClient {
                 } else{
                     client.send("DATETIME");
                 }
-            } else if (msg.equals("exit")){
+            } else if (msg.equals("exit") | msg.equals("BYE")){
                 client.send("BYE");
                 return true;
             } else{
