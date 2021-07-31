@@ -80,7 +80,8 @@ public class SDTPClient {
     public static void main(String[] args) {
         // default IP and port
         String ip = "127.0.0.1";
-        String port = "431";
+        // Default port. Since port 431 requires sudo execution, using 4444 instead.
+        String port = "4444";
         SDTPClient client = null;
 
         // continuously accept user input until termination command
