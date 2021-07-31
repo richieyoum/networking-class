@@ -75,7 +75,6 @@ public class SDTPClient {
         while (!(res=in.readLine()).equals("") && !res.equals('.')){
             System.out.println(res);
         }
-//        System.out.println("done");
     }
 
     public static void stopConnection(SDTPClient client) throws IOException {
