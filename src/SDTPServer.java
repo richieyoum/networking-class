@@ -134,7 +134,7 @@ public class SDTPServer {
                         }
                     }
                     // exit (BYE) command
-                    else if (msg.equals("BYE") || msg.length() == 0) {
+                    else if (msg.equals("BYE") || msg.equals("")) {
                         out.println("BYE\n");
                         // terminate connection
                         stopConnection();

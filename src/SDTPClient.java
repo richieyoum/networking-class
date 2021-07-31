@@ -35,7 +35,8 @@ public class SDTPClient {
             System.out.println("\tget date: get current date. Must connect to server first");
             System.out.println("\tget datetime: get current date and time. Must connect to server first");
             System.out.println("\texit: terminate the connection");
-            return "";
+            System.out.println(".");
+            return ".";
         } else if (msg.equals("connect")) {
             return "HELLO";
         } else if (msg.equals("get DOW")) {
@@ -58,8 +59,7 @@ public class SDTPClient {
         } else if (msg.equals("exit")) {
             return "BYE";
         } else {
-            System.out.println("Unknown command: " + msg);
-            return "";
+            return msg;
         }
     }
 
@@ -119,9 +119,16 @@ public class SDTPClient {
                             stopConnection(client);
                         }
                         break label;
-
-                    // empty output (ie- help)
+                    // help output - do nothing
+                    case ".":
+                        break;
+                    // empty output means termination on server end if already connected
                     case "":
+                        if (client != null) {
+                            client.send(command);
+                            stopConnection(client);
+                            break label;
+                        }
                         // do nothing when command empty
                         break;
                     // the rest of commands are sent to the server
