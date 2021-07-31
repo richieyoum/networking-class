@@ -6,6 +6,11 @@ public class SDTPClient {
     private PrintWriter out;
     private BufferedReader in;
 
+    /** Constructor for SDTPClient
+     *
+     * @param ip ip address to connect to
+     * @param port port to bind to
+     */
     public SDTPClient(String ip, String port) {
         try {
             clientSocket = new Socket(ip, Integer.parseInt(port));
@@ -21,6 +26,11 @@ public class SDTPClient {
         }
     }
 
+    /** Converts client command to corresponding server command
+     * The converted command is further handled in switch statement in main method
+     * @param msg client command
+     * @return
+     */
     public static String convertToCommand(String msg) {
         if (msg.equals("server help") || msg.equals("HELP")) {
             return "HELP";
@@ -63,6 +73,11 @@ public class SDTPClient {
         }
     }
 
+    /** Send command to the server and print responses from the server
+     *
+     * @param msg
+     * @throws IOException
+     */
     public void send(String msg) throws IOException {
         out.println(msg);
         String res;
@@ -71,6 +86,11 @@ public class SDTPClient {
         }
     }
 
+    /** Terminate connection
+     * Terminate BufferedReader, PrintWriter and socket instances
+     * @param client
+     * @throws IOException
+     */
     public static void stopConnection(SDTPClient client) throws IOException {
         client.in.close();
         client.out.close();
