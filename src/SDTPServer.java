@@ -170,7 +170,7 @@ public class SDTPServer {
             String port = "4444";
             // If port is provided in the arg, use it instead.
             try {
-                port = args[1];
+                port = args[0];
             } catch (Exception e) {
                 e.printStackTrace();
             }
