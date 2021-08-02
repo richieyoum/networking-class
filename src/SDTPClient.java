@@ -9,7 +9,7 @@ public class SDTPClient {
     /** Constructor for SDTPClient
      *
      * @param ip ip address to connect to
-     * @param port port to bind to
+     * @param port port to listen to
      */
     public SDTPClient(String ip, String port) {
         try {
