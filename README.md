@@ -1,4 +1,8 @@
-# CCCS 431 Programming Assignment - Richie Youm (260749847)
+# CCCS 431 Programming Assignment
+Richie Youm (260749847)
+
+Kosai Alchaghouri (260940618)
+
 ## Simple Date-Time Information Protocol
 Client-server application to request current date, time, datetime, etc. using sockets.
 
